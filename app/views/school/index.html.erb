@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Static Title : Show</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<h2>School List</h2>
+
+			<table border="1">
+				<thead>
+					<tr>
+						<td>School Name</td>
+						<td>School Code</td>
+						<td>School Address</td>
+					</tr>
+				</thead>
+				<tbody>
+					<% @schools.each do |school| %>
+					<tr>
+						<td><%= link_to school.name, controller: 'school', action:'show', id: school.id %></td>
+						<td><%= school.code %></td>
+						<td><%= school.address %></td>
+						<td><%= link_to 'Show', school_path(school) %></td>
+						<td><%= link_to 'Edit', edit_school_path(school) %></td>
+						<td><%= link_to 'Destroy', school_path(school),
+						              method: :delete,
+						              data: { confirm: 'Are you sure you want to delete ' + school.name + ' ?' } %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>	
+
+			<div>
+				<h4><%= link_to "Index" %></h4>
+				<h4><%= link_to "New School", new_school_path %></h4>
+			</div>
+		</div>
+	</body>
+</html>

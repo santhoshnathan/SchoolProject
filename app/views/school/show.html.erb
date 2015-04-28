@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>Static Title : Show</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<p><string>School Name : </string> <%= @school.name %></p>
+			<p><strong>School Code : </strong> <%= @school.code %></p>
+			<p><strong>School Address : </strong> <%= @school.address %></p>
+		</div>
+
+		<%= link_to 'Edit', controller:'school', action: 'edit', id: @school %> | 
+		<%= link_to 'Back', controller:'school', action: 'index' %>
+	</body>
+</html>

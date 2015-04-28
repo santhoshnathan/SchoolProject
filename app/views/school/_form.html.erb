@@ -1,0 +1,33 @@
+<%= form_for :school, url: { action: "create" } do |f| %>
+
+			<%if @school.errors.any? %> 
+			<div id="error_explanation">
+				<h2>
+					<%= pluralize(@school.errors.count, "error") %> 
+					prohibited this school info from being saved:
+				</h2>
+				<ul>
+					<%= @school.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+			<% end %>
+
+
+			<p>
+				<%= f.label :name %><br />
+				<%= f.text_field :name %>
+			</p>
+			<p>
+				<%= f.label :code %><br />
+				<%= f.text_field :code %>
+			</p>
+			<p>
+				<%= f.label :address %><br />
+				<%= f.text_area :address %>
+			</p>
+			<p>
+				<%= f.submit %>
+			</p>
+			<% end %>

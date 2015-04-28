@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Static Title</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<h3>Basic Form</h3>
+
+			<%# form_for :school, url: school_path(@school), method: :patch do |f| %>
+
+			<%= render 'form' %>
+
+			<%= link_to 'Back', controller: 'school', action: 'index'  %>
+		</div>
+	</body>
+</html>
