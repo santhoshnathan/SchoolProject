@@ -1,4 +1,6 @@
 class SchoolController < ApplicationController
+  layout 'schoollayout'
+  
   def index
   	@schools = School.all
   end

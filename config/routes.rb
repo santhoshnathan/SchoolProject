@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  get 'student/index'
+
   get 'home/index'
 
   get 'school/index'
 
-  root 'home#index'
+  # root 'home#index'
+  root 'school#index'
 
   resources :home
+  resources :school
   resources :student
 
   # The priority is based upon order of creation: first created -> highest priority.
